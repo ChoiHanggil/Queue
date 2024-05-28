@@ -20,16 +20,16 @@ int main()
 		std::cin >> processing;
 		if (processing == 1)
 		{
-			if ((end + 1) % NUM_SIZE != start)
+			if ((end + 1) % (NUM_SIZE+1) != start)
 			{
-				end = (end+1) % NUM_SIZE;
+				end = (end+1) % (NUM_SIZE+1);
 				enqueue(array, end);
-				Print(array, end, start,NUM_SIZE);
+				Print(array, end, start,NUM_SIZE+1);
 				
 			}
 			else
 			{
-				Print(array, end, start,NUM_SIZE);
+				Print(array, end, start,NUM_SIZE+1);
 				std::cout << "배열이 꽉 찼습니다. 2 dequeue 해주세요" << std::endl;
 			}
 			
@@ -38,13 +38,13 @@ int main()
 		{
 			if (start == end)
 			{
-				Print(array, end, start, NUM_SIZE);
+				Print(array, end, start, NUM_SIZE+1);
 				std::cout << "배열이 비어 있습니다. 1 enquque 해주세요" << std::endl;
 			}
 			else
 			{
-				start = (start + 1) % NUM_SIZE;
-				Print(array, end, start, NUM_SIZE);
+				start = (start + 1) % (NUM_SIZE+1);
+				Print(array, end, start, NUM_SIZE+1);
 			}
 		}
 	
